@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdint>
-
+#define BUFFER_SIZE 16
+#define LASTFIB BUFFER_SIZE-1
 using namespace std;
 int64_t fib(int n,int64_t *buffer)
 {
@@ -27,15 +28,15 @@ int64_t fib(int n)
 }
 int main()
 {
-    int64_t buffer[64]={0};
-    for(int i=0; i<=63; i++)
+    int64_t buffer[BUFFER_SIZE]={0};
+    for(int i=0; i<=LASTFIB; i++)
     {
         if(i>=2)
             cout<<"F"<<i<<" = "<<fib(i,buffer)<<" ("<<fib(i-2,buffer)<<"+"<<fib(i-1,buffer)<<")\n";
         else
             cout<<"F"<<i<<" = "<<fib(i,buffer)<<"\n";
     }
-    /*for(int i=0; i<=63; i++)
+    /*for(int i=0; i<=LASTFIB; i++)
     {
         if(i>=2)
             cout<<"F"<<i<<" = "<<fib(i)<<" ("<<fib(i-2)<<"+"<<fib(i-1)<<")\n";

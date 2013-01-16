@@ -1,3 +1,4 @@
+/// note: const after function definition means function shall not modify anything.
 #include <iostream>
 #include <cstdlib>
 #include <sstream>
